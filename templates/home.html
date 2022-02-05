@@ -56,26 +56,26 @@
 
     <div class="mt-5 row">
         <div class="col-lg-6">
-            <div class="graphic"></div>
-            {#            <img src="{% static 'images/graphic.png' %}">#}
+            <div id="graphic" class="graphic" style="display: {{ graphic }}"></div>
+            {% if idea %}
+                <div class="h1">{{ idea }}</div>
+            {% endif %}
         </div>
         <div class="col-lg-6">
             <div class="mb-3 form-sub h5">Generate Ideas</div>
             <div class="h2 mb-4 form-head">Tell us what your blog is about?</div>
             <form method="post">
+                {% csrf_token %}
                 <div class="mb-5">
                     <div class="form-text mb-1">Type the category or genre of your blog here.</div>
-                    <input placeholder="Category" type="text" class="form-control pill inp">
+                    {{ form.category }}
+                    {#                    <input placeholder="Category" type="text" class="form-control pill inp">#}
                 </div>
                 <div class="mb-5">
                     <div class="form-text mb-1">Type some keywords around your subject.</div>
-                    <input placeholder="Keywords" type="text" class="form-control pill inp">
+                    {{ form.keywords }}
+                    {#                    <input placeholder="Keywords" type="text" class="form-control pill inp">#}
                 </div>
-                {#                <div class="mb-5">#}
-                {#                    <label for="customRange1" class="form-label">Flexibility</label>#}
-                {#                    <input type="range" class="form-range" id="customRange1">#}
-                {#                </div>#}
-
                 <button class="btn btn-secondary btn-lg download-btn" type="submit">Generate Idea</button>
             </form>
         </div>
@@ -124,7 +124,8 @@
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+</script>
 </body>
 
 
