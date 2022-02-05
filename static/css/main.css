@@ -1,10 +1,72 @@
 html, body {
-    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+    background-color: #ECEFF4;
+}
+.pill {
+    border-radius: 90px;
+}
+.blog-heading {
+    color: #4C566A;
+    font-family: "Fira Mono", system-ui;
+}
+
+.form-sub {
+    color: #8FBCBB;
+    font-family: "Fira Mono", system-ui;
+}
+
+.form-head {
+    color: #BF616A;
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+}
+.inp {
+    border: rgba(191, 97, 106, 0.4) 1px solid;
 }
 .active {
-  color: #5e81ac !important;
+    color: #5e81ac !important;
 }
+
 .download-btn {
-  border-radius: 90px;
-  color: #2E3440;
+    border-radius: 90px;
+    background-color: #2E3440;
+}
+
+.graphic {
+    background-image: url("/static/images/graphic1.png");
+    width: 500px;
+    height: 500px;
+    animation-name: buildgraphic;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes buildgraphic {
+
+    50% {
+        background-image: url("/static/images/graphic4.png");
+        width: 500px;
+        height: 500px;
+    }
+    100% {
+        background-image: url("/static/images/graphicF.png");
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.on-get {
+    background-image: none;
+    width: 500px;
+    height: 500px;
+    border: #B48EAD 1px solid;
+    /*animation-name: buildgraphic;*/
+    /*animation-duration: 3s;*/
+    /*animation-iteration-count: 1;*/
+    /*animation-fill-mode: forwards;*/
+    /*animation-timing-function: ease-out;*/
 }
