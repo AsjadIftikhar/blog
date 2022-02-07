@@ -97,9 +97,10 @@ def ideaGenerator(keyword):
     output_top_k_sampling = gpt_neo.generate_text(prompt, args=top_k_sampling_settings)
 
     rawOutput = output_top_k_sampling.text
-    split = rawOutput.splitlines()
-    output = split[1]  #read second line
+    text = "".join([s for s in rawOutput.splitlines(True) if s.strip("\r\n")])
+    # split = rawOutput.splitlines()
+    output = text.partition('\n')[0]
     blogIdea = re.sub(r'\d+', '', output) #remove number from start
     blogIdea = blogIdea.replace(":", "").lstrip()
-
     return blogIdea
+
