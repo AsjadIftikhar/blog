@@ -4,9 +4,11 @@ html, body {
     font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     background-color: #ECEFF4;
 }
+
 .pill {
     border-radius: 90px;
 }
+
 .blog-heading {
     color: #4C566A;
     font-family: "Fira Mono", system-ui;
@@ -21,16 +23,18 @@ html, body {
     color: #BF616A;
     font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
 }
+
 .inp {
     border: rgba(191, 97, 106, 0.4) 1px solid;
 }
+
 .active {
     color: #5e81ac !important;
 }
 
 .download-btn {
     border-radius: 90px;
-    background-color: #2E3440;
+    background-color: #4C566A;
 }
 
 .graphic {
@@ -44,7 +48,14 @@ html, body {
     animation-timing-function: ease-in-out;
 
 }
-
+.blog-card {
+    background-color:#4C566A;
+    border-radius: 90px;
+    animation-name: onget;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 @keyframes buildgraphic {
 
     50% {
@@ -58,15 +69,9 @@ html, body {
         height: 500px;
     }
 }
+@keyframes onget {
 
-.on-get {
-    background-image: none;
-    width: 500px;
-    height: 500px;
-    border: #B48EAD 1px solid;
-    /*animation-name: buildgraphic;*/
-    /*animation-duration: 3s;*/
-    /*animation-iteration-count: 1;*/
-    /*animation-fill-mode: forwards;*/
-    /*animation-timing-function: ease-out;*/
+    100% {
+        transform: rotate(-2deg);
+    }
 }
