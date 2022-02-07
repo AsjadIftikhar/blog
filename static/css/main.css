@@ -48,14 +48,6 @@ html, body {
     animation-timing-function: ease-in-out;
 
 }
-.blog-card {
-    background-color:#4C566A;
-    border-radius: 90px;
-    animation-name: onget;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
 @keyframes buildgraphic {
 
     50% {
@@ -67,11 +59,5 @@ html, body {
         background-image: url("/static/images/graphicF.png");
         width: 500px;
         height: 500px;
-    }
-}
-@keyframes onget {
-
-    100% {
-        transform: rotate(-2deg);
     }
 }

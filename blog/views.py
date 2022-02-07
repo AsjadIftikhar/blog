@@ -10,10 +10,6 @@ def index(request):
         form = BlogForm(request.POST)
         if form.is_valid():
             category = form.cleaned_data['category']
-            keywords = form.cleaned_data['keywords']
-
-            print(category)
-            print(keywords)
 
             idea = "Pets are great"
     else:

@@ -60,8 +60,12 @@
                 <div id="graphic" class="graphic"></div>
             {% endif %}
             {% if idea %}
-                <div class="blog-card">
-                    <h1 class="m-2" style="color: #E5E9F0; font-family: 'FiraMono Nerd Font',serif">{{ idea }}</h1>
+                <div class="card mt-4">
+                    <div class="card-header" style="background-color: #2E3440; color: #ECEFF4; border-radius: 2px">Generated idea</div>
+                    <div class="card-body" style="background-color: #D8DEE9; border-radius: 2px">
+                        <h1 class="mb-4" style="color: #2E3440; font-family: 'FiraMono Nerd Font',serif">{{ idea }}</h1>
+                        <p class="card-text ms-1" style="color: #BF616A"><small>Last Update 1min ago</small></p>
+                    </div>
                 </div>
             {% endif %}
         </div>
@@ -73,12 +77,6 @@
                 <div class="mb-5">
                     <div class="form-text mb-1">Type the category or genre of your blog here.</div>
                     {{ form.category }}
-                    {#                    <input placeholder="Category" type="text" class="form-control pill inp">#}
-                </div>
-                <div class="mb-5">
-                    <div class="form-text mb-1">Type some keywords around your subject.</div>
-                    {{ form.keywords }}
-                    {#                    <input placeholder="Keywords" type="text" class="form-control pill inp">#}
                 </div>
                 <button class="btn btn-secondary btn-lg download-btn" type="submit">Generate Idea</button>
             </form>
@@ -87,7 +85,7 @@
 </main>
 
 <footer class="mt-5">
-    <div class="container">
+    <div class="container pt-5">
         <div class="bottom pb-3 pt-3" style="border-top: rgba(0,0,0,0.3) 1px solid">
             <div class="row">
                 <div class="col-lg-3 d-flex justify-content-evenly align-items-center">
