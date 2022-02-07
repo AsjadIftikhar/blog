@@ -31,7 +31,8 @@ def ideaGenerator(keyword):
     3: 12 Secrets About Pets.
     4: Create a wish list for your dog or cat.
     5: Do you want another pet? Share why or why not.
-    6: Review a pet product that you’re not a fan of."
+    6: Review a pet product that you’re not a fan of.
+    7: 5 Reasons You Should be Talking About pets."
 
     blog ideas for cars include:
     1: A Foolproof Guide to buying Cars.
@@ -53,7 +54,10 @@ def ideaGenerator(keyword):
     3: Memorable outfits to wear on special occasions.
     4: DIY Fashion tutorials.
     5: Your top fashion hacks.
-    6: Things You Should Know About The Fashion Industry."
+    6: Things You Should Know About The Fashion Industry.
+    7: How to still dress cute for the cold weather.
+    8: Best stylish winter boots.
+    9: How to keep your hair luscious during the winter."
 
     blog ideas for health care include:
     1: foods that will boost your immunity.
@@ -79,7 +83,10 @@ def ideaGenerator(keyword):
     3: The year to plan a trip with friends.
     4: The future of solo female travel.
     5: The world’s most interesting journeys.
-    6: Things to Keep in Mind When travelling alone."
+    6: Things to Keep in Mind When travelling alone.
+    7: How to keep fit when you’re traveling during the holidays.
+    8: Best winter hiking destinations.
+    9: Best winter festivals around the world."
 
     blog ideas for food include:
     1: The Best Bagels Are in California.
@@ -88,6 +95,50 @@ def ideaGenerator(keyword):
     4: 24 Days of Cookies.
     5: This Is How You Get the Best Scrambled Eggs.
     6: Here's why you should have spiced tea in winters."
+    
+    blog ideas for sports include:
+    1: How to choose the right sport for you based on characteristics.
+    2: How to choose a coach in individual sports.
+    3: 5 steps to exercise properly at home.
+    4: How football became a popular sport.
+    5: How athletes keep fit.
+    6: 10 great squash courts in the world.
+    7: Top 10 heavyweight sports.
+    8: 10 top sports to play worldwide."
+    
+    blog ideas for movies include:
+    1: Top 10 Action Movie.
+    2: Movies which a Student must watch.
+    3: Movies that a Foreigner must watch to know about Indian Culture.
+    4: List of Movies that are Remake of an Old Movie.
+    5: Top 10 Flop movies of the Year.
+    6: Movies Based on Real Life story.
+    7: Top Common Sense Money saving Tips for Movie Fans.
+    8: Strange Facts about the latest super hit Movie you don't know about."
+    
+    blog ideas for home decoration include:
+    1: How to create a cozy home.
+    2: Home decor ideas to create your own winter wonderland.
+    3: How to decorate your home for Christmas.
+    4: Great indoor plants that will survive the cold weather.
+    5: How to decorate your front porch for winter.
+    6: How to organize your closet this winter."
+    
+    blog ideas for parenting include:
+    1: Winter activities you can do with your kids.
+    2: Tips to help care for your sick child during the winter.
+    3: Best places to go tobogganing with your kids.
+    4: Gifts for kids.
+    5: Best coloring books for kids to keep them occupied.
+    6: Holiday games for kids."
+    
+    blog ideas for Finance include:
+    1: How to save on utilities during the winter.
+    2: How to save money during the holidays.
+    3: How to set financial goals.
+    4: Tips to manage your money the right way in the new year.
+    5: Plan a holiday party on a budget.
+    6: Budgeting tips for Christmas gift shopping."
 
     blog ideas for {key} include:""".format(key=keyword)
 
@@ -109,5 +160,5 @@ def ideaGenerator(keyword):
     return blogIdea
 
 
-idea = ideaGenerator("Testing")
+idea = ideaGenerator("restaurants")
 print(idea)
