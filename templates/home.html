@@ -42,7 +42,7 @@
 <body>
 <main role="main" class="container mb-5">
     <h2 class="mt-5 mb-3 blog-heading">Blog Idea Generator</h2>
-    <nav style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb">
+    <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item mb-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
@@ -56,9 +56,13 @@
 
     <div class="mt-5 row">
         <div class="col-lg-6">
-            <div id="graphic" class="graphic" style="display: {{ graphic }}"></div>
+            {% if graphic %}
+                <div id="graphic" class="graphic"></div>
+            {% endif %}
             {% if idea %}
-                <div class="h1">{{ idea }}</div>
+                <div class="blog-card">
+                    <h1 class="m-2" style="color: #E5E9F0; font-family: 'FiraMono Nerd Font',serif">{{ idea }}</h1>
+                </div>
             {% endif %}
         </div>
         <div class="col-lg-6">

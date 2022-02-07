@@ -4,8 +4,9 @@ from .forms import BlogForm
 
 def index(request):
     idea = ""
-    graphic = ""
+    graphic = True
     if request.method == "POST":
+        graphic = False
         form = BlogForm(request.POST)
         if form.is_valid():
             category = form.cleaned_data['category']
@@ -13,9 +14,8 @@ def index(request):
 
             print(category)
             print(keywords)
-            graphic = "none"
+
             idea = "Pets are great"
     else:
-        graphic = "block"
         form = BlogForm()
     return render(request, 'home.html', {'form': form, 'idea': idea, 'graphic': graphic})
