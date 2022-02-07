@@ -4,7 +4,6 @@ import re
 
 
 def ideaGenerator(keyword):
-
     # prompt = """blog ideas for {key} include:
     # 1: Why Billionaires Will Never Invest In {key}.
     # 2: An Expert Interview About {key}.
@@ -93,14 +92,22 @@ def ideaGenerator(keyword):
     blog ideas for {key} include:""".format(key=keyword)
 
     gpt_neo = HappyGeneration(model_type="GPT-NEO", model_name="EleutherAI/gpt-neo-125M")
-    top_k_sampling_settings = GENSettings(do_sample=True, top_k=30, max_length=15, min_length=10)
+    top_k_sampling_settings = GENSettings(do_sample=True, top_k=30, max_length=30, min_length=15)
     output_top_k_sampling = gpt_neo.generate_text(prompt, args=top_k_sampling_settings)
 
     rawOutput = output_top_k_sampling.text
+
+    # Cleaning
     text = "".join([s for s in rawOutput.splitlines(True) if s.strip("\r\n")])
-    # split = rawOutput.splitlines()
+
     output = text.partition('\n')[0]
-    blogIdea = re.sub(r'\d+', '', output) #remove number from start
-    blogIdea = blogIdea.replace(":", "").lstrip()
+
+    # remove number from start
+    blogIdea = re.sub(r'\d+', '', output)
+    blogIdea = blogIdea.replace(":", "").strip()
+    blogIdea = blogIdea.split(".")[0]
     return blogIdea
 
+
+idea = ideaGenerator("Testing")
+print(idea)
