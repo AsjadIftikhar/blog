@@ -60,13 +60,18 @@
                 <div id="graphic" class="graphic"></div>
             {% endif %}
             {% if idea %}
-                <div class="card mt-4">
-                    <div class="card-header" style="background-color: #2E3440; color: #ECEFF4; border-radius: 2px">Generated idea</div>
-                    <div class="card-body" style="background-color: #D8DEE9; border-radius: 2px">
-                        <h1 class="mb-4" style="color: #2E3440; font-family: 'FiraMono Nerd Font',serif">{{ idea }}</h1>
-                        <p class="card-text ms-1" style="color: #BF616A"><small>Last Update 1min ago</small></p>
+                {% for i in idea %}
+                    <div class="card mt-4">
+                        <div class="card-header" style="background-color: #2E3440; color: #ECEFF4; border-radius: 2px">
+                            Generated idea
+                        </div>
+                        <div class="card-body" style="background-color: #D8DEE9; border-radius: 2px">
+                            <h1 class="mb-4"
+                                style="color: #2E3440; font-family: 'FiraMono Nerd Font',serif">{{ i }}</h1>
+                            <p class="card-text ms-1" style="color: #BF616A"><small>Last Update 1min ago</small></p>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
             {% endif %}
         </div>
         <div class="col-lg-6">
@@ -77,6 +82,10 @@
                 <div class="mb-5">
                     <div class="form-text mb-1">Type the category or genre of your blog here.</div>
                     {{ form.category }}
+                </div>
+                <div class="mb-5">
+                    <div class="form-text mb-1">Type a few keywords for your blog here. (3 Recommended)</div>
+                    {{ form.keywords }}
                 </div>
                 <button class="btn btn-secondary btn-lg download-btn" type="submit">Generate Idea</button>
             </form>

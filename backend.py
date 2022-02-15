@@ -160,5 +160,5 @@ def ideaGenerator(keyword):
     return blogIdea
 
 
-idea = ideaGenerator("restaurants")
-print(idea)
+# idea = ideaGenerator("restaurants")
+# print(idea)

@@ -4,14 +4,20 @@ import backend
 
 
 def index(request):
-    idea = ""
+    idea = []
     graphic = True
     if request.method == "POST":
         graphic = False
         form = BlogForm(request.POST)
         if form.is_valid():
             category = form.cleaned_data['category']
-            idea = backend.ideaGenerator(category)
+            keywords = form.cleaned_data['keywords']
+            print(keywords.split())
+            idea.append(backend.ideaGenerator(category))
+            idea.append("Hello world")
+            idea.append("Hello world")
+            idea.append("Hello world")
+            idea.append("Hello world")
 
     else:
         form = BlogForm()
