@@ -12,8 +12,7 @@ def index(request):
         if form.is_valid():
             category = form.cleaned_data['category']
             keywords = form.cleaned_data['keywords']
-            # idea = backend.ideaGenerator(category, keywords)
-            idea = ["A", "B", "C", "D"]
+            idea = backend.ideaGenerator(category, keywords)
 
     else:
         form = BlogForm()
