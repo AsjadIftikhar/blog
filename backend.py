@@ -3,21 +3,26 @@ import openai
 from gpt import Example, GPT
 import re
 
+
 def trainedModel(prompt):
     print(openai.Completion.create(
         model="curie:ft-tcma-2022-02-16-11-49-17",
-        max_tokens = 200,
+        max_tokens=200,
         prompt=prompt
-        )["choices"][0]["text"])
+    )["choices"][0]["text"])
+
 
 def ideaGenerator(category, keyword):
+    import environ
 
-    openai.api_key="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"
+    env = environ.Env()
+    environ.Env.read_env()
 
+    openai.api_key = env('API_KEY')
 
     gpt = GPT(
         engine="text-davinci-001",
-        max_tokens = 150,
+        max_tokens=150,
     )
     gpt.add_example(Example('5 blog ideas for water: facts,drink,reuse', """
         1: Wastewater treatment: A critical component of a circular economy.
@@ -68,7 +73,8 @@ def ideaGenerator(category, keyword):
         4: 5 of the Best Highlights From Inside the Photographer’s Mind.
         5: 5 Fun Things You’ll Enjoy Trying with Your New Camera!"""))
 
-    prompt = """5 blog ideas for {category} include: {keywords}\n\n###\n\n""".format(category=category, keywords=keyword)
+    prompt = """5 blog ideas for {category} include: {keywords}\n\n###\n\n""".format(category=category,
+                                                                                     keywords=keyword)
 
     rawOutput = gpt.get_top_reply(prompt)
     cleanText = "\n".join([ll.rstrip() for ll in rawOutput.splitlines() if ll.strip()])
@@ -77,5 +83,5 @@ def ideaGenerator(category, keyword):
     return blogIdea
 
 
-idea = ideaGenerator("health care","mental health")
-print(idea)
+# idea = ideaGenerator("health care", "mental health")
+# print(idea)
