@@ -4,7 +4,7 @@ from gpt import Example, GPT
 import re
 
 
-def trainedModel(prompt):
+def trained_model(prompt):
     print(openai.Completion.create(
         model="curie:ft-tcma-2022-02-16-11-49-17",
         max_tokens=200,
@@ -12,7 +12,8 @@ def trainedModel(prompt):
     )["choices"][0]["text"])
 
 
-def ideaGenerator(category, keyword):
+def idea_generator(category: str, keyword: str) -> list:
+    """This method generates blog ideas based on the category and keyword provided"""
     import environ
 
     env = environ.Env()
@@ -26,8 +27,8 @@ def ideaGenerator(category, keyword):
     )
 
     with open("examples.txt") as fp:
-        Lines = fp.readlines()
-        for line in Lines:
+        lines = fp.readlines()
+        for line in lines:
             a, b = line.split(';', 1)
             gpt.add_example(Example(a, b))
 
@@ -48,11 +49,8 @@ def ideaGenerator(category, keyword):
     prompt = """5 blog ideas for {category} include: {keywords}\n\n###\n\n""".format(category=category,
                                                                                      keywords=keyword)
 
-    rawOutput = gpt.get_top_reply(prompt)
-    cleanText = "\n".join([ll.rstrip() for ll in rawOutput.splitlines() if ll.strip()])
-    blogIdea = cleanText.splitlines()
+    raw_output = gpt.get_top_reply(prompt)
+    clean_text = "\n".join([ll.rstrip() for ll in raw_output.splitlines() if ll.strip()])
+    blog_idea = clean_text.splitlines()
 
-    return blogIdea
-
-# idea = ideaGenerator("health care", "mental health")
-# print(idea)
+    return blog_idea
